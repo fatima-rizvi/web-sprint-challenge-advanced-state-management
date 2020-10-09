@@ -24,10 +24,24 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What problem does the context API help solve?
+
+    It helps share state down the component tree without prop drilling
+
 2. In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+  Actions are information that send data to the store through reducers. Reducers break down how to change the state in store based on the actions they've been given, and store holds the entire state in the application. That's why storeis knoe as the single source of truth.
+
 3. What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+  Application state is global while component state is local. If there is information that needs to be in state and accessibles to all parts of the application (not just to parent and child or within that branch) then the data should be in application state. If the information only needs to be shared between parent and child or along a branch, then it's preferable to use component state.
+
 4. Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+  Redux thunk is a middleware function. It allows us to make action creators that can return a function, not just an action. It changes our action creators by allowing them to run logic while also changing or interacting with our store. 
+
 5. What is your favorite state management system you've learned and this sprint? Please explain why!
+
+  I found context to be extremely easy to use and very clear, however I can see the issues with it in larger applications, since it makes it hard to reuse components across different branches. I don't like prop drilling much either since it gets so messy. So far, I've found redux to be my favorite since it makes it easy to access state, we don't have to prop drill, and components remain easily reusable. 
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
