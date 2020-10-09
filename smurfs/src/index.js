@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
 //import reducer 
-import { reducer } from './reducers/smurfReducer';
+import reducer from './reducers/smurfReducer';
 
 import "./index.css";
 import App from "./components/App";

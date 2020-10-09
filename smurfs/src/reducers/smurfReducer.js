@@ -8,7 +8,7 @@ const initialState = {
     newSmurf: {}
 };
 
-export const reducer = ( state = initialState, action) => {
+const reducer = ( state = initialState, action) => {
     switch( action.type ){
         case FETCH_SMURFS_START:
             console.log("running FETCH_SMURFS_START");
@@ -27,3 +27,5 @@ export const reducer = ( state = initialState, action) => {
             return state;
     };
 };
+
+export default reducer;
