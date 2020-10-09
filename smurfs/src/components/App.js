@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import SmurfForm from '../components/SmurfForm';
+import Smurfs from '../components/Smurfs'
 
 import { fetchSmurfs } from '../actions/actions'
 
@@ -16,8 +17,12 @@ function App (props) {
 
   return (
     <div className="App">
-      <h1>SMURFS! W/Redux</h1>
+      <h1>Welcome to Smurf Village!</h1>
       <SmurfForm />
+      <Smurfs />
+      {/* {props.smurfs.map((smurf) => (
+        <h1 key={smurf.id}>{smurf.name}</h1>
+      ))} */}
     </div>
     );
   

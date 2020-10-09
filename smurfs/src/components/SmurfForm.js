@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { pushSmurfs } from '../actions/actions'
 
 const initialValues = {
     name: '',
@@ -26,38 +27,42 @@ const SmurfForm = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        console.log('Form values: ', values);
+        props.pushSmurfs(values)
         resetForm()
         
     }
 
     return (
-        <form onSubmit = {handleSubmit}>
-            <label>Name: &nbsp;
-                <input 
-                    name = 'name'
-                    type = 'text'
-                    value = {values.name}
-                    onChange = {handleChanges}
-                />
-            </label>
-            <label>Age: &nbsp;
-                <input 
-                    name = 'age'
-                    type = 'text'
-                    value = {values.age}
-                    onChange = {handleChanges}
-                />
-            </label>
-            <label>Height: &nbsp;
-                <input 
-                    name = 'height'
-                    type = 'text'
-                    value = {values.height}
-                    onChange = {handleChanges}
-                />
-            </label>
-            <button>Add smurf</button>
-        </form>
+        <div>
+            <form onSubmit = {handleSubmit}>
+                <label>Name: &nbsp;
+                    <input 
+                        name = 'name'
+                        type = 'text'
+                        value = {values.name}
+                        onChange = {handleChanges}
+                    />
+                </label>
+                <label>Age: &nbsp;
+                    <input 
+                        name = 'age'
+                        type = 'text'
+                        value = {values.age}
+                        onChange = {handleChanges}
+                    />
+                </label>
+                <label>Height: &nbsp;
+                    <input 
+                        name = 'height'
+                        type = 'text'
+                        value = {values.height}
+                        onChange = {handleChanges}
+                    />
+                </label>
+                <button>Add a smurf!</button>
+            </form>
+        </div>
     )
 }
 
@@ -67,4 +72,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {})(SmurfForm)
+export default connect(mapStateToProps, { pushSmurfs })(SmurfForm)
